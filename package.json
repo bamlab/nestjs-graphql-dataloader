@@ -31,8 +31,7 @@
   },
   "dependencies": {
     "@apollo/server": "^4.11.3",
-    "dataloader": "^2.0.0",
-    "npm-check-updates": "^17.1.13"
+    "dataloader": "^2.0.0"
   },
   "devDependencies": {
     "@apollo/gateway": "^0.38.0",
