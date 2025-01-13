@@ -30,11 +30,13 @@
     "rxjs": "^7.0.0"
   },
   "dependencies": {
+    "@apollo/server": "^4.11.3",
     "dataloader": "^2.0.0",
     "npm-check-updates": "^17.1.13"
   },
   "devDependencies": {
     "@apollo/gateway": "^0.38.0",
+    "@nestjs/apollo": "^12.2.2",
     "@nestjs/cli": "^10.4.9",
     "@nestjs/common": "^10.4.15",
     "@nestjs/core": "^10.4.15",
@@ -50,14 +52,14 @@
     "@types/ws": "^8.5.13",
     "apollo-server-express": "^3.0.0",
     "graphql": "^16.6.0",
-    "jest": "^27.1.0",
+    "jest": "^29.7.0",
     "prettier": "^2.1.2",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.0.0",
     "sqlite3": "^5.1.7",
     "supertest": "^5.0.0",
-    "ts-jest": "^27.0.5",
+    "ts-jest": "^29.2.5",
     "ts-loader": "^9.2.5",
     "ts-morph": "^11.0.3",
     "ts-node": "^10.2.1",
@@ -68,19 +70,23 @@
   "types": "dist/index.d.ts",
   "jest": {
     "transform": {
-      "^.+\\.tsx?$": "ts-jest"
+      "^.+\\.tsx?$": [
+        "ts-jest",
+        {
+          "diagnostics": {
+            "warnOnly": true
+          }
+        }
+      ]
     },
     "collectCoverage": true,
-    "globals": {
-      "ts-jest": {
-        "diagnostics": {
-          "warnOnly": true
-        }
-      }
-    },
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.ts$",
     "collectCoverageFrom": [
       "src/index.ts"
     ]
-  }
+  },
+  "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.ts$",
+  "collectCoverageFrom": [
+    "src/index.ts"
+  ]
 }
