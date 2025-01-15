@@ -1,10 +1,13 @@
 {
-  "name": "nestjs-graphql-dataloader",
+  "name": "@bam.tech/nestjs-graphql-dataloader",
   "version": "0.2.0",
   "private": false,
   "description": "NestJS GraphQL Dataloader",
   "license": "MIT",
-  "repository": "https://github.com/bamlab/nestjs-graphql-dataloader",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bamlab/nestjs-graphql-dataloader.git"
+  },
   "author": "Mark Everett",
   "main": "dist/index.js",
   "scripts": {
@@ -87,5 +90,12 @@
   "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.ts$",
   "collectCoverageFrom": [
     "src/index.ts"
-  ]
+  ],
+  "directories": {
+    "example": "example"
+  },
+  "bugs": {
+    "url": "https://github.com/bamlab/nestjs-graphql-dataloader/issues"
+  },
+  "homepage": "https://github.com/bamlab/nestjs-graphql-dataloader#readme"
 }
