@@ -1,16 +1,28 @@
 {
   "compilerOptions": {
+    // Use ES2021, ES2022, or ESNext:
+    "target": "ES2022",
+
+    // CommonJS is fine for Nest:
     "module": "commonjs",
+
+    // Must include at least "ES2022" or "ESNext" to have new symbol definitions
+    "lib": ["ES2022"],
+
     "moduleResolution": "node",
     "declaration": true,
-    "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es6",
+    "removeComments": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
     "sourceMap": true,
     "outDir": "dist",
-    "esModuleInterop": true,
+    // If you want to be strict about everything else:
+    // "strict": true,
+    // If you want to ignore some node_modules type mismatches:
+    // "skipLibCheck": true
     "baseUrl": "./"
   },
-  "exclude": ["node_modules", "dist", "*test.ts", "example"]
+  "exclude": ["node_modules", "dist", "*.test.ts", "example"]
 }
