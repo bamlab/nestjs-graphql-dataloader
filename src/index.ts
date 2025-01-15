@@ -191,7 +191,7 @@ export const ensureOrder = (options) => {
 
 interface IOrderedNestDataLoaderOptions<ID, Type> {
   propertyKey?: string;
-  query: (keys: readonly ID[]) => Promise<Type[]>;
+  query: (keys: ID[]) => Promise<Type[] | null | undefined>;
   typeName?: string;
   dataloaderConfig?: DataLoader.Options<ID, Type>;
 }
@@ -211,7 +211,7 @@ export abstract class OrderedNestDataLoader<ID, Type>
     const defaultTypeName = this.constructor.name.replace("Loader", "");
     return new DataLoader<ID, Type>(async (keys) => {
       return ensureOrder({
-        docs: await options.query(keys),
+        docs: await options.query(keys as ID[]),
         keys,
         prop: options.propertyKey || "id",
         error: (keyValue) =>
